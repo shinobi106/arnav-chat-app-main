@@ -1,10 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import { Toaster } from "@/components/ui/sonner";
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+import "./index.css";
+import { SocketProvider } from "./contexts/SocketContext";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <SocketProvider>
     <App />
-  </StrictMode>,
-)
+    <Toaster closeButton richColors />
+  </SocketProvider>
+);
